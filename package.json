@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "format": "prettier --write 'src/**/*.js'",
+    "lint": "prettier --check 'src/**/*.js'"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.0",
+    "snowpack": "^2.0.0"
+  },
+  "prettier": {
+    "printWidth": 140
+  },
+  "dependencies": {
+    "phaser": "^3.23.0"
+  }
+}
