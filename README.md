@@ -10,9 +10,9 @@ I've made maps with [Tiled](https://www.mapeditor.org/) and all assets are provi
 
 I've tried to make the main scene map agnostic, so for every iteration, I create a new attribute on de tilemap to represent this iteration.
 
-- Collides: boolean attribute called `collides`;
-- Jump through: bollean attribute called `jump-through`;
-- Player Spawn: an Object with name `player-spawn`.
+- Collides: boolean attribute called `collides`
+- Jump through: bollean attribute called `jump-through`
+- Player Spawn: an Object with name `player-spawn`
 - Background: string attribute called `background` (every background inside `/public/assets/background`)
 
 ## Controlls
