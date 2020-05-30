@@ -1,5 +1,7 @@
 import { Base, ConstructorParams as BaseConstructorParams } from "./base";
 
+const VELOCITY = 216;
+
 export class Player extends Base {
   private char: string;
   private jumps = 2;
@@ -46,6 +48,13 @@ export class Player extends Base {
     });
 
     this.scene.anims.create({
+      key: "wall-jump",
+      frames: this.scene.anims.generateFrameNumbers(`char:${this.char}-wall-jump`, { start: 0, end: 32 }),
+      repeat: -1,
+      frameRate: 16,
+    });
+
+    this.scene.anims.create({
       key: "double-jump",
       frames: this.scene.anims.generateFrameNumbers(`char:${this.char}-double-jump`, { start: 0, end: 32 }),
       repeat: -1,
@@ -65,11 +74,11 @@ export class Player extends Base {
 
     if (cursors.left.isDown) {
       this.setFlipX(true);
-      this.setVelocityX(-200);
+      this.setVelocityX(-VELOCITY);
       this.body.blocked.down && this.anims.play("run", true);
     } else if (cursors.right.isDown) {
       this.setFlipX(false);
-      this.setVelocityX(200);
+      this.setVelocityX(VELOCITY);
       this.body.blocked.down && this.anims.play("run", true);
     } else {
       this.setVelocityX(0);
@@ -82,7 +91,16 @@ export class Player extends Base {
     }
 
     if (this.previousY < this.y) {
-      this.anims.play("fall", true);
+      if (this.body.blocked.left || this.body.blocked.right) {
+        this.anims.play("wall-jump", true);
+        this.setGravityY(-400);
+        this.jumps = 1;
+      } else {
+        this.anims.play("fall", true);
+        this.setGravityY(0);
+      }
+    } else {
+      this.setGravityY(0);
     }
 
     if (cursors.up.isUp) {
@@ -98,7 +116,7 @@ export class Player extends Base {
         this.jumps -= 1;
       }
 
-      this.setVelocityY(-200);
+      this.setVelocityY(-VELOCITY);
     }
 
     this.previousY = this.y;
