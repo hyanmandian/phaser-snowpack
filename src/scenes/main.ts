@@ -57,6 +57,10 @@ export class Scene extends Phaser.Scene {
       this.context.jumping = false;
     }
 
+    if (this.context.player.previousY < this.context.player.body.y) {
+      this.context.player.fall();
+    }
+
     if (cursors.up.isUp) {
       this.context.jumping = false;
     } else if (cursors.up.isDown && this.context.jumps > 0 && !this.context.jumping) {
@@ -72,6 +76,8 @@ export class Scene extends Phaser.Scene {
 
       this.context.player.body.setVelocityY(-200);
     }
+
+    this.context.player.previousY = this.context.player.body.y;
   }
 
   update() {

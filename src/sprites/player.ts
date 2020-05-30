@@ -12,7 +12,6 @@ export class Player extends Base {
     this.scene.add.existing(this);
     this.scene.physics.add.existing(this);
 
-    this.setBounce(0.2);
     this.setCollideWorldBounds(true);
   }
 
@@ -45,6 +44,13 @@ export class Player extends Base {
       frameRate: 16,
     });
 
+    this.scene.anims.create({
+      key: "fall",
+      frames: this.scene.anims.generateFrameNumbers("char:virtual-guy-fall", { start: 0, end: 32 }),
+      repeat: -1,
+      frameRate: 16,
+    });
+
     this.jump();
   }
 
@@ -58,6 +64,10 @@ export class Player extends Base {
 
   jump() {
     this.anims.play("jump", true);
+  }
+
+  fall() {
+    this.anims.play("fall", true);
   }
 
   doubleJump() {
