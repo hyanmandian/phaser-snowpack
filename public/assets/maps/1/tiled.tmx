@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.5" orientation="orthogonal" renderorder="right-down" width="50" height="25" tilewidth="16" tileheight="16" infinite="0" nextlayerid="3" nextobjectid="3">
+<map version="1.2" tiledversion="1.3.5" orientation="orthogonal" renderorder="right-down" width="50" height="25" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="3">
  <editorsettings>
   <export target="tilemap.json" format="json"/>
  </editorsettings>
@@ -1222,7 +1222,7 @@
   </data>
  </layer>
  <objectgroup id="2" name="Objects">
-  <object id="1" name="Spawn" x="32" y="369">
+  <object id="1" name="Player Spawn" x="32" y="369">
    <point/>
   </object>
  </objectgroup>

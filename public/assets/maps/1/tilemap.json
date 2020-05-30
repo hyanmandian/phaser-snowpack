@@ -32,7 +32,7 @@
                 {
                  "height":0,
                  "id":1,
-                 "name":"Spawn",
+                 "name":"Player Spawn",
                  "point":true,
                  "rotation":0,
                  "type":"",
@@ -47,7 +47,7 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":3,
+ "nextlayerid":4,
  "nextobjectid":3,
  "orientation":"orthogonal",
  "renderorder":"right-down",
