@@ -47,9 +47,15 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":4,
+ "nextlayerid":5,
  "nextobjectid":3,
  "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"background",
+         "type":"string",
+         "value":"gray"
+        }],
  "renderorder":"right-down",
  "tiledversion":"1.3.5",
  "tileheight":16,
@@ -61,7 +67,7 @@
          "imageheight":176,
          "imagewidth":352,
          "margin":0,
-         "name":"terrain",
+         "name":"tileset",
          "spacing":0,
          "tilecount":242,
          "tileheight":16,
@@ -71,8 +77,8 @@
                  "properties":[
                         {
                          "name":"collides",
-                         "type":"bool",
-                         "value":true
+                         "type":"",
+                         "value":null
                         }]
                 }, 
                 {

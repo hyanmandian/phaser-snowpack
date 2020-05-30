@@ -1,9 +1,11 @@
 import Phaser from "phaser";
 
+import { CHARS } from "../constants";
+
 import { KEY as MAIN_SCENE_KEY } from "./main";
 
 const IMAGE = {
-  terrain: "assets/terrain/terrain-16x16.png",
+  tileset: "assets/terrain/terrain-16x16.png",
   ...["blue", "brown", "gray", "green", "pink", "purple", "yellow"].reduce(
     (acc, color) => ({
       ...acc,
@@ -16,7 +18,7 @@ const IMAGE = {
 const SPRITE = {
   ...["idle", "run", "double-jump", "fall", "hit", "wall-jump", "jump"].reduce(
     (acc, state) =>
-      ["mask-dude", "ninja-frog", "pink-man", "virtual-guy"].reduce(
+      CHARS.reduce(
         (acc, char) => ({
           ...acc,
           [`char:${char}-${state}`]: {
