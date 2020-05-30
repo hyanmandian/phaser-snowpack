@@ -8,7 +8,7 @@ I've made maps with [Tiled](https://www.mapeditor.org/) and all assets are provi
 
 ## How I do these interactions
 
-I've tried to make the main scene map agnostic, so for every iteration I create a new attribute on de tile map to representate this iterarion.
+I've tried to make the main scene map agnostic, so for every iteration, I create a new attribute on de tilemap to represent this iteration.
 
 - Collides: boolean attribute called `collides`;
 - Jump through: bollean attribute called `jump-through`;
