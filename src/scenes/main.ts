@@ -21,7 +21,7 @@ export class Scene extends Phaser.Scene {
     this.context.tiles.setCollisionByProperty({ collides: true });
     this.context.tiles.layer.data.forEach((row) =>
       row.forEach((tile) => {
-        if (tile.properties['disable-collide-down'] === true) {
+        if (tile.properties["jump-through"] === true) {
           tile.collideDown = false;
           tile.collideLeft = false;
           tile.collideRight = false;
@@ -29,7 +29,7 @@ export class Scene extends Phaser.Scene {
       })
     );
 
-    const { x, y } = this.context.map.findObject("Objects", ({ name }) => name === "Player Spawn");
+    const { x, y } = this.context.map.findObject("Objects", ({ name }) => name === "player-spawn");
     this.context.player = new Player({ scene: this, x, y, char: CHARS[Math.floor(Math.random() * CHARS.length)] });
     this.physics.add.collider(this.context.player, this.context.tiles);
   }
