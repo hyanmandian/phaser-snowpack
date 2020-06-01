@@ -1,6 +1,6 @@
 # Phaser + Snowpack
 
-> Just a POC with Phaser and Snowpack. This project was bootstrapped with Create Snowpack App (CSA). 
+> Just a POC with Phaser and Snowpack. This project was bootstrapped with Create Snowpack App (CSA).
 
 To play, just [click here](https://phaser-snowpack.now.sh/) and have fun! :D
 
@@ -23,13 +23,13 @@ I've tried to make the main scene map agnostic, so for every iteration, I create
 
 ## Features
 
-- [x] Double jump
+- [X] Double jump
 - [X] Wall jump
 - [X] Jump through platforms
+- [X] Loader screen
 - [ ] Menu
 - [ ] Char selection
 - [ ] Enemy
 - [ ] Kill
 - [ ] Death
-- [ ] Loader screen
 - [ ] Reset

@@ -2,13 +2,15 @@ import { Base, ConstructorParams as BaseConstructorParams } from "./base";
 
 const VELOCITY = 216;
 
+export type ConstructorParams = BaseConstructorParams & { char: string };
+
 export class Player extends Base {
   private char: string;
   private jumps = 2;
   private jumping = false;
   private previousY: number;
 
-  constructor({ char, ...args }: BaseConstructorParams) {
+  constructor({ char, ...args }: ConstructorParams) {
     super({ ...args, texture: `char:${char}-idle` });
 
     this.char = char;
@@ -92,12 +94,12 @@ export class Player extends Base {
 
     if (this.previousY < this.y) {
       if (this.body.blocked.left || this.body.blocked.right) {
+        this.jumps = 1;
         this.anims.play("wall-jump", true);
         this.setGravityY(-400);
-        this.jumps = 1;
       } else {
-        this.anims.play("fall", true);
         this.setGravityY(0);
+        this.anims.play("fall", true);
       }
     } else {
       this.setGravityY(0);
@@ -109,11 +111,11 @@ export class Player extends Base {
       this.jumping = true;
 
       if (this.body.blocked.down) {
+        this.jumps -= 1;
         this.anims.play("jump", true);
-        this.jumps -= 1;
       } else {
-        this.anims.play("double-jump", true);
         this.jumps -= 1;
+        this.anims.play("double-jump", true);
       }
 
       this.setVelocityY(-VELOCITY);

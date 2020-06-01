@@ -5,7 +5,6 @@ export type ConstructorParams = {
   y: number;
   scene: Phaser.Scene;
   texture?: string;
-  [key: string]: any;
 };
 
 export abstract class Base extends Phaser.Physics.Arcade.Sprite {

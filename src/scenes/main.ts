@@ -12,10 +12,12 @@ export class Scene extends Phaser.Scene {
     super({ key: KEY });
   }
 
-  create() {
-    this.context.map = this.make.tilemap({ key: "level:1", tileWidth: 16, tileHeight: 16 });
+  renderLevel(key: string) {
+    this.context.map = this.make.tilemap({ key: `level:${key}`, tileWidth: 16, tileHeight: 16 });
+
     const background = this.context.map.properties.find(({ name }) => name === "background");
     this.context.background = this.add.tileSprite(0, 0, 1600, 800, `background:${background.value}`);
+
     this.context.tileset = this.context.map.addTilesetImage("tileset");
     this.context.tiles = this.context.map.createStaticLayer(0, this.context.tileset, 0, 0);
     this.context.tiles.setCollisionByProperty({ collides: true });
@@ -31,7 +33,12 @@ export class Scene extends Phaser.Scene {
 
     const { x, y } = this.context.map.findObject("Objects", ({ name }) => name === "player-spawn");
     this.context.player = new Player({ scene: this, x, y, char: CHARS[Math.floor(Math.random() * CHARS.length)] });
+
     this.physics.add.collider(this.context.player, this.context.tiles);
+  }
+
+  create() {
+    this.renderLevel("1");
   }
 
   update() {
