@@ -27,8 +27,11 @@ I've tried to make the main scene map agnostic, so for every iteration, I create
 - [X] Wall jump
 - [X] Jump through platforms
 - [X] Loader screen
+- [X] Scale screen
+- [X] Camera following player
 - [ ] Menu
 - [ ] Char selection
+- [ ] Virtual control (on mobile)
 - [ ] Enemy
 - [ ] Kill
 - [ ] Death
