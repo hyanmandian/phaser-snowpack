@@ -14,6 +14,10 @@ const config = {
       debug: false,
     },
   },
+  scale: {
+    mode: Phaser.Scale.ENVELOP,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
   scene: [PreloaderScene, MainScene],
 };
 
