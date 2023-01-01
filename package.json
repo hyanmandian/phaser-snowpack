@@ -13,6 +13,6 @@
     "printWidth": 140
   },
   "dependencies": {
-    "phaser": "^3.23.0"
+    "phaser": "^3.55.2"
   }
 }
